@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: vidly-backend:1.0
+          image: kavindasamarawickkrama2001/vidly-backend:v.1
           imagePullPolicy: IfNotPresent
           command: ["./docker-entrypoint.sh"]
           ports:
