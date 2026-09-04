@@ -1,0 +1,21 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: vidly
+  namespace: argocd
+spec:
+  commonUpdateSettings:
+    updateStrategy: newest-build
+    allowTags: "regexp:^v\\.[0-9]+$"
+    platforms:
+      - linux/amd64
+      - linux/arm64
+  writeBackConfig:
+    method: argocd
+  applicationRefs:
+    - namePattern: vidly
+      images:
+        - alias: backend
+          imageName: kavindasamarawickkrama2001/vidly-backend:v.1
+        - alias: frontend
+          imageName: kavindasamarawickkrama2001/vidly-frontend:v.2
