@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - backend.yaml
-  - frontend.yaml
-  - db.yaml
+  - backend/backend.yaml
+  - frontend/frontend.yaml
+  - db/db.yaml
 images:
   - name: kavindasamarawickkrama2001/vidly-backend
     newTag: v.1
